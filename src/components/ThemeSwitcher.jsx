@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
+import { IoMoonSharp, IoSunny } from "react-icons/io5";
 import { ThemeContext } from "./ThemeContext";
 
 const toggleStyle =
   "absolute left-1 top-1 dark:bg-neutral-300 bg-neutral-800 w-4 h-4 rounded-full transition";
 
 const ThemeSwitcher = () => {
-  const initialTheme = useContext(ThemeContext)
+  const initialTheme = useContext(ThemeContext);
   const [theme, setTheme] = useState(initialTheme);
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const ThemeSwitcher = () => {
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+
   return (
     <button
       className="relative flex items-center cursor-pointer"
@@ -29,7 +31,13 @@ const ThemeSwitcher = () => {
         className={
           theme === "dark" ? toggleStyle : `${toggleStyle} translate-x-[100%]`
         }
-      />
+      >
+        {theme === "dark" ? (
+          <IoMoonSharp className="bg-neutral-800" />
+        ) : (
+          <IoSunny className="bg-white" />
+        )}
+      </div>
     </button>
   );
 };

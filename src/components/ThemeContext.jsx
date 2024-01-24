@@ -8,6 +8,8 @@ const Theme = ({ children }) => {
       ? "dark"
       : "light";
 
+      console.log(initialValue())
+
   return (
     <ThemeContext.Provider value={initialValue()}>
       {children}
