@@ -10,7 +10,7 @@ import SignUp from "./pages/SignUp";
 function App() {
   const { pathname } = useLocation();
   return (
-    <div className="dark:bg-neutral-800 dark:text-neutral-300">
+    <div className="bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 antialiased">
       {!(pathname === "/sign-in" || pathname === "/sign-up") && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />

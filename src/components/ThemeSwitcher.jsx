@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { IoMoonSharp, IoSunny } from "react-icons/io5";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "./Theme";
 
 const switcherStyle =
   "absolute left-1 top-1 dark:bg-neutral-300 bg-neutral-800 w-4 h-4 rounded-full transition";
@@ -41,7 +41,7 @@ const ThemeSwitcher = () => {
         {theme === "dark" ? (
           <IoMoonSharp className="bg-neutral-800" />
         ) : (
-          <IoSunny className="bg-white" />
+          <IoSunny className="bg-neutral-100" />
         )}
       </div>
     </button>
