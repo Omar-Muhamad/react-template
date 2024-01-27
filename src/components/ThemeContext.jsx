@@ -8,10 +8,11 @@ const Theme = ({ children }) => {
       ? "dark"
       : "light";
 
-      console.log(initialValue())
+  const defaultTheme =
+    JSON.parse(localStorage.getItem("theme")) || initialValue();
 
   return (
-    <ThemeContext.Provider value={initialValue()}>
+    <ThemeContext.Provider value={defaultTheme}>
       {children}
     </ThemeContext.Provider>
   );

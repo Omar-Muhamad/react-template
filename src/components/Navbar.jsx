@@ -1,14 +1,15 @@
 import { NavLink } from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher";
+import SignInBtn from "./SignInBtn";
 
+const navLinks = ["Home", "About", "Contact"];
 const Navbar = () => {
-  const navLinks = ["Home", "About", "Contact"];
   return (
     <nav className="px-16 h-[72px] flex justify-between items-center shadow-lg">
       <div className="logo">
         <img src="../assets/logo.png" alt="Site logo" />
       </div>
-      <div className="flex gap-10">
+      <div className="flex items-center gap-10">
         <ul className="nav-links flex gap-4">
           {navLinks.map((link) => (
             <li key={link}>
@@ -21,6 +22,7 @@ const Navbar = () => {
           ))}
         </ul>
         <ThemeSwitcher />
+        <SignInBtn />
       </div>
     </nav>
   );
